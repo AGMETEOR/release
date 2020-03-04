@@ -19,21 +19,20 @@
 ###############################################################################
 
 readonly DEFAULT_PROJECT="k8s-staging-kubernetes"
-# TODO(prototype): Need to reference test prod project here
-readonly PROD_PROJECT="k8s-staging-kubernetes"
+# TODO(prototype): Need to reference official prod project here
+readonly PROD_PROJECT="k8s-release-test-prod"
 readonly TEST_PROJECT="k8s-staging-kubernetes"
 
 readonly DEFAULT_BUCKET="k8s-staging-kubernetes"
-# TODO(prototype): Need to reference test prod project here
-readonly PROD_BUCKET="k8s-staging-kubernetes"
+# TODO(prototype): Need to reference official prod bucket here
+readonly PROD_BUCKET="k8s-release-test-prod"
 readonly TEST_BUCKET="k8s-staging-kubernetes"
 readonly CI_BUCKET="kubernetes-release-dev"
 
-# TODO(vdf): Need to reference K8s Infra registries here
 readonly GCRIO_PATH_PROD="k8s.gcr.io"
 # TODO(vdf): Remove all GCRIO_PATH_PROD_PUSH logic once the k8s.gcr.io vanity
 #            domain flip (VDF) is successful
-readonly GCRIO_PATH_PROD_PUSH="gcr.io/google-containers"
+readonly GCRIO_PATH_PROD_PUSH="gcr.io/$PROD_PROJECT"
 readonly GCRIO_PATH_TEST="gcr.io/$TEST_PROJECT"
 
 readonly KUBE_CROSS_REGISTRY="us.gcr.io/k8s-artifacts-prod/build-image"

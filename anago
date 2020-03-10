@@ -378,7 +378,9 @@ check_prerequisites () {
 
   # Verify write access to all container registries that might be used
   # to ensure both mock and --nomock runs will work.
-  ensure_registry_acls "${ALL_CONTAINER_REGISTRIES[*]}" || return 1
+  # TODO(prototype): Uncomment this check if GCS write is enabled for the
+  #                  the GCB service account.
+  #ensure_registry_acls "${ALL_CONTAINER_REGISTRIES[*]}" || return 1
 
   logecho -n "Checking cloud project state: "
   GCLOUD_PROJECT=$($GCLOUD config get-value project 2>/dev/null)
